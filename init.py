@@ -1,8 +1,17 @@
+import logging
 from pathlib import Path
 from shutil import rmtree
+import sys
 
 import atoti as tt
 from atoti.copy_tutorial import _copy_tutorial
+
+logging.basicConfig(
+    level=logging.INFO,
+    format="%(levelname)s %(process)s --- [%(threadName)s] %(name)s : %(message)s",
+    handlers=[logging.StreamHandler(sys.stdout)],
+)
+_LOGGER = logging.getLogger(__name__)
 
 SALES_TABLE_NAME = "sales"
 PRODUCTS_TABLE_NAME = "products"
@@ -10,6 +19,7 @@ SHOPS_TABLE_NAME = "shops"
 
 
 def start_application(session: tt.Session):
+    _LOGGER.info("Starting init script")
     tutorial_path = Path() / "tutorial"
     if tutorial_path.exists():
         rmtree(tutorial_path)
@@ -20,6 +30,7 @@ def start_application(session: tt.Session):
 
 
 def create_cube(session: tt.Session, data_path: Path):
+    _LOGGER.info("Creating cube")
     sales_table = session.read_csv(
         data_path / "sales.csv", keys=["Sale ID"], table_name=SALES_TABLE_NAME
     )
@@ -40,6 +51,7 @@ def create_cube(session: tt.Session, data_path: Path):
 
 
 def define_measures(session: tt.Session, cube: tt.Cube):
+    _LOGGER.info("Defining measures")
     l, m = cube.levels, cube.measures  # noqa: E741
 
     sales_table = session.tables[SALES_TABLE_NAME]
@@ -68,7 +80,6 @@ def define_measures(session: tt.Session, cube: tt.Cube):
         m["Amount.SUM"],
         m["Average amount per shop"],
         m["Cumulative amount"],
-        # m["Percent of parent amount"],
     ]:
         measure.folder = "Amount"
 
