@@ -7,14 +7,15 @@ readme = "README.md"
 
 [tool.poetry.dependencies]
 python = "^3.11"
-atoti = "^0.8.6"
+atoti = "=0.8.6"
+atoti-aws = "=0.8.6"
 
 [tool.poetry.group.dev.dependencies]
 ruff = "^0.1.7"
 
 [tool.poetry.scripts]
-atoti = "atoti_script.init:main"
-local-atoti = "atoti_script.init:local_main"
+atoti = "pnl_explained.pnl_explained:main"
+local-atoti = "pnl_explained.pnl_explained:local_main"
 
 [build-system]
 requires = ["poetry-core"]
