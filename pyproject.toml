@@ -1,5 +1,5 @@
 [tool.poetry]
-name = "atoti-script"
+name = "pnl-explained"
 version = "0.1.0"
 description = ""
 authors = ["Gautier Moin <gmo@activeviam.com>"]
