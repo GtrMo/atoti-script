@@ -7,11 +7,15 @@ readme = "README.md"
 
 [tool.poetry.dependencies]
 python = "^3.11"
-atoti = "^0.8.6"
+wrong_dependency_666 = "*" # Hopefully this name will stay unused on Pypi.
 
 
 [tool.poetry.group.dev.dependencies]
 ruff = "^0.1.7"
+
+[tool.poetry.scripts]
+atoti = "atoti_script.init:main"
+local-atoti = "atoti_script.init:local_main"
 
 [build-system]
 requires = ["poetry-core"]
