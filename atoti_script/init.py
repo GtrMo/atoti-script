@@ -89,5 +89,10 @@ def main():
         start_application(session)
 
 
+def local_main():
+    with tt.Session() as session:
+        start_application(session)
+
+
 if __name__ == "__main__":
     main()

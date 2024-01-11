@@ -9,7 +9,6 @@ readme = "README.md"
 python = "^3.11"
 atoti = "^0.8.6"
 
-
 [tool.poetry.group.dev.dependencies]
 ruff = "^0.1.7"
 
