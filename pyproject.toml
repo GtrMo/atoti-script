@@ -7,10 +7,15 @@ readme = "README.md"
 
 [tool.poetry.dependencies]
 python = "^3.11"
-atoti = "^0.8.6"
+atoti = "==0.9.0.20240429220709"
 
 [tool.poetry.group.dev.dependencies]
 ruff = "^0.1.7"
+
+[[tool.poetry.source]]
+name = "atoti-experimental"
+url = "https://activeviam.jfrog.io/artifactory/api/pypi/atoti-python-api-pypi-internal/simple/"
+priority = "supplemental"
 
 [tool.poetry.scripts]
 atoti = "atoti_script.init:main"
