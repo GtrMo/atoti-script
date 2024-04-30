@@ -13,6 +13,8 @@ logging.basicConfig(
 )
 _LOGGER = logging.getLogger(__name__)
 
+CUBE_NAME = "Sales"
+
 SALES_TABLE_NAME = "sales"
 PRODUCTS_TABLE_NAME = "products"
 SHOPS_TABLE_NAME = "shops"
@@ -47,7 +49,7 @@ def create_cube(session: tt.Session, data_path: Path):
     )
     sales_table.join(shops_table, sales_table["Shop"] == shops_table["Shop ID"])
 
-    return session.create_cube(sales_table)
+    return session.create_cube(sales_table, name=CUBE_NAME)
 
 
 def define_measures(session: tt.Session, cube: tt.Cube):
