@@ -10,7 +10,7 @@ python = "^3.11"
 atoti = "^0.8.6"
 
 [tool.poetry.group.dev.dependencies]
-ruff = "^0.1.7"
+ruff = "^0.4.2"
 
 [tool.poetry.scripts]
 atoti = "atoti_script.init:main"
