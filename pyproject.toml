@@ -7,7 +7,7 @@ readme = "README.md"
 
 [tool.poetry.dependencies]
 python = "^3.11"
-atoti = "==0.9.0.20240429220709"
+atoti = "^0.9.0.20240528074948"
 
 [tool.poetry.group.dev.dependencies]
 ruff = "^0.4.2"
