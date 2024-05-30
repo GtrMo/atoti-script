@@ -13,17 +13,15 @@ files = [
 
 [[package]]
 name = "atoti"
-version = "0.9.0.20240429220709"
+version = "0.9.0.20240529210218"
 description = "Explore metrics across hundreds of dimensions, analyze live data at its most granular level and perform what-if simulations at unparalleled speed"
 optional = false
 python-versions = ">=3.10"
 files = [
-    {file = "atoti-0.9.0.20240429220709-py3-none-any.whl", hash = "sha256:e6835692955a069ab4cbbd0dcb502780cad8260fc20a40fd9049464d6e4c6bca"},
+    {file = "atoti-0.9.0.20240529210218-py3-none-any.whl", hash = "sha256:d23237bc40f56bb28641170bc6383e2046616682e5f0ee07fc69ad41c381ae6e"},
 ]
 
 [package.dependencies]
-atoti-core = "0.9.0.20240429220709"
-atoti-query = "0.9.0.20240429220709"
 jdk4py = ">=21.0.2.1"
 numpy = ">=1.24.3"
 pandas = ">=1.5.3"
@@ -33,64 +31,21 @@ pydantic = ">=2.6.0"
 typing-extensions = ">=4.6.1"
 
 [package.extras]
-aws = ["atoti-aws (==0.9.0.20240429220709)"]
-azure = ["atoti-azure (==0.9.0.20240429220709)"]
-directquery-bigquery = ["atoti-directquery-bigquery (==0.9.0.20240429220709)"]
-directquery-clickhouse = ["atoti-directquery-clickhouse (==0.9.0.20240429220709)"]
-directquery-databricks = ["atoti-directquery-databricks (==0.9.0.20240429220709)"]
-directquery-jdbc = ["atoti-directquery-jdbc (==0.9.0.20240429220709)"]
-directquery-mssql = ["atoti-directquery-mssql (==0.9.0.20240429220709)"]
-directquery-redshift = ["atoti-directquery-redshift (==0.9.0.20240429220709)"]
-directquery-snowflake = ["atoti-directquery-snowflake (==0.9.0.20240429220709)"]
-directquery-synapse = ["atoti-directquery-synapse (==0.9.0.20240429220709)"]
-gcp = ["atoti-gcp (==0.9.0.20240429220709)"]
-jupyterlab = ["atoti-jupyterlab (==0.9.0.20240429220709)"]
-kafka = ["atoti-kafka (==0.9.0.20240429220709)"]
-observability = ["atoti-observability (==0.9.0.20240429220709)"]
-sql = ["atoti-sql (==0.9.0.20240429220709)"]
-
-[package.source]
-type = "legacy"
-url = "https://activeviam.jfrog.io/artifactory/api/pypi/atoti-python-api-pypi-internal/simple"
-reference = "atoti-experimental"
-
-[[package]]
-name = "atoti-core"
-version = "0.9.0.20240429220709"
-description = "Package containing private symbols shared by the other Atoti packages"
-optional = false
-python-versions = ">=3.10"
-files = [
-    {file = "atoti_core-0.9.0.20240429220709-py3-none-any.whl", hash = "sha256:c667cac22c2e1350e28cf73fca1a996d28d05a73695da9f7b2c911839b4fb4cc"},
-]
-
-[package.dependencies]
-numpy = ">=1.24.3"
-pandas = ">=1.5.3"
-pydantic = ">=2.6.0"
-typing-extensions = ">=4.6.1"
-
-[package.source]
-type = "legacy"
-url = "https://activeviam.jfrog.io/artifactory/api/pypi/atoti-python-api-pypi-internal/simple"
-reference = "atoti-experimental"
-
-[[package]]
-name = "atoti-query"
-version = "0.9.0.20240429220709"
-description = "Package to query Atoti sessions"
-optional = false
-python-versions = ">=3.10"
-files = [
-    {file = "atoti_query-0.9.0.20240429220709-py3-none-any.whl", hash = "sha256:6f0be8e879a1642322c06ea1c546b2a104866142de7c53f5a2df3fb6c7a1633c"},
-]
-
-[package.dependencies]
-atoti-core = "0.9.0.20240429220709"
-pandas = ">=1.5.3"
-pyarrow = ">=15.0.2"
-pydantic = ">=2.6.0"
-typing-extensions = ">=4.6.1"
+aws = ["atoti-aws (==0.9.0.20240529210218)"]
+azure = ["atoti-azure (==0.9.0.20240529210218)"]
+directquery-bigquery = ["atoti-directquery-bigquery (==0.9.0.20240529210218)"]
+directquery-clickhouse = ["atoti-directquery-clickhouse (==0.9.0.20240529210218)"]
+directquery-databricks = ["atoti-directquery-databricks (==0.9.0.20240529210218)"]
+directquery-jdbc = ["atoti-directquery-jdbc (==0.9.0.20240529210218)"]
+directquery-mssql = ["atoti-directquery-mssql (==0.9.0.20240529210218)"]
+directquery-redshift = ["atoti-directquery-redshift (==0.9.0.20240529210218)"]
+directquery-snowflake = ["atoti-directquery-snowflake (==0.9.0.20240529210218)"]
+directquery-synapse = ["atoti-directquery-synapse (==0.9.0.20240529210218)"]
+gcp = ["atoti-gcp (==0.9.0.20240529210218)"]
+jupyterlab = ["atoti-jupyterlab (==0.9.0.20240529210218)"]
+kafka = ["atoti-kafka (==0.9.0.20240529210218)"]
+observability = ["atoti-observability (==0.9.0.20240529210218)"]
+sql = ["atoti-sql (==0.9.0.20240529210218)"]
 
 [package.source]
 type = "legacy"
@@ -478,4 +433,4 @@ files = [
 [metadata]
 lock-version = "2.0"
 python-versions = "^3.11"
-content-hash = "c60e204b402854905addb5694773dc3e753afea811654f10f6b4ae959779acf0"
+content-hash = "3b228c67274e1dc697f00fa746fcae18867cc4079ab43c5a66aa05f70bfe74e3"
