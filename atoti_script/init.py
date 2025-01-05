@@ -30,6 +30,7 @@ def start_application(session: tt.Session):
 
 def create_cube(session: tt.Session):
     sales_table = session.tables[SALES_TABLE_NAME]
+    sales_table.load_sql
     return session.create_cube(sales_table, name=CUBE_NAME)
 
 
@@ -41,17 +42,17 @@ def load_data(session: tt.Session):
         data_sources = json.load(f)
     databricks = data_sources["databricks"]["options"]
 
-    session.tables[SALES_TABLE_NAME].load_jdbc(
+    session.tables[SALES_TABLE_NAME].load_sql(
         "select * from visual_cube_builder_catalog.demo.sales",
         url=databricks["url"],
         driver=databricks["driverClassName"],
     )
-    session.tables[PRODUCTS_TABLE_NAME].load_jdbc(
+    session.tables[PRODUCTS_TABLE_NAME].load_sql(
         "select * from visual_cube_builder_catalog.demo.products",
         url=databricks["url"],
         driver=databricks["driverClassName"],
     )
-    session.tables[WAREHOUSES_TABLE_NAME].load_jdbc(
+    session.tables[WAREHOUSES_TABLE_NAME].load_sql(
         "select * from visual_cube_builder_catalog.demo.warehouses",
         url=databricks["url"],
         driver=databricks["driverClassName"],
