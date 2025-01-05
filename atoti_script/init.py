@@ -17,7 +17,8 @@ CUBE_NAME = "sales"
 
 SALES_TABLE_NAME = "sales"
 PRODUCTS_TABLE_NAME = "products"
-SHOPS_TABLE_NAME = "shops"
+WAREHOUSES_TABLE_NAME = "warehouses"
+USERS_TABLE_NAME = "buyers"
 
 
 def start_application(session: tt.Session):
@@ -39,12 +40,22 @@ def load_data(session: tt.Session):
     with data_sources_path.open() as f:
         data_sources = json.load(f)
     databricks = data_sources["databricks"]["options"]
-    for name, table in session.tables.items():
-        table.load_sql(
-            f"select * from visual_cube_builder_catalog.demo.{name}",
-            url=databricks["url"],
-            driver=databricks["driverClassName"],
-        )
+
+    session.tables[SALES_TABLE_NAME].load_jdbc(
+        "select * from visual_cube_builder_catalog.demo.sales",
+        url=databricks["url"],
+        driver=databricks["driverClassName"],
+    )
+    session.tables[PRODUCTS_TABLE_NAME].load_jdbc(
+        "select * from visual_cube_builder_catalog.demo.products",
+        url=databricks["url"],
+        driver=databricks["driverClassName"],
+    )
+    session.tables[WAREHOUSES_TABLE_NAME].load_jdbc(
+        "select * from visual_cube_builder_catalog.demo.warehouses",
+        url=databricks["url"],
+        driver=databricks["driverClassName"],
+    )
 
 
 def define_measures(session: tt.Session, cube: tt.Cube):
