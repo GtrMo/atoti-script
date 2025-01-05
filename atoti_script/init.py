@@ -1,10 +1,10 @@
 import logging
 from pathlib import Path
-from shutil import rmtree
 import sys
+import json
+from typing import cast
 
 import atoti as tt
-from atoti.copy_tutorial import _copy_tutorial
 
 logging.basicConfig(
     level=logging.INFO,
@@ -13,7 +13,7 @@ logging.basicConfig(
 )
 _LOGGER = logging.getLogger(__name__)
 
-CUBE_NAME = "Sales"
+CUBE_NAME = "sales"
 
 SALES_TABLE_NAME = "sales"
 PRODUCTS_TABLE_NAME = "products"
@@ -22,34 +22,29 @@ SHOPS_TABLE_NAME = "shops"
 
 def start_application(session: tt.Session):
     _LOGGER.info("Starting init script")
-    tutorial_path = Path() / "tutorial"
-    if tutorial_path.exists():
-        rmtree(tutorial_path)
-
-    _copy_tutorial(tutorial_path)
-    cube = create_cube(session, tutorial_path / "data")
+    load_data(session)
+    cube = create_cube(session)
     define_measures(session, cube)
 
 
-def create_cube(session: tt.Session, data_path: Path):
-    _LOGGER.info("Creating cube")
-    sales_table = session.read_csv(
-        data_path / "sales.csv", keys=["Sale ID"], table_name=SALES_TABLE_NAME
-    )
-
-    products_table = session.read_csv(
-        data_path / "products.csv", keys=["Product"], table_name=PRODUCTS_TABLE_NAME
-    )
-    sales_table.join(
-        products_table, sales_table["Product"] == products_table["Product"]
-    )
-
-    shops_table = session.read_csv(
-        data_path / "shops.csv", keys=["Shop ID"], table_name=SHOPS_TABLE_NAME
-    )
-    sales_table.join(shops_table, sales_table["Shop"] == shops_table["Shop ID"])
-
+def create_cube(session: tt.Session):
+    sales_table = session.tables[SALES_TABLE_NAME]
     return session.create_cube(sales_table, name=CUBE_NAME)
+
+
+def load_data(session: tt.Session):
+    from atoti_cloud_engine.data_source_setup import generate_data_source_file
+
+    data_sources_path = cast(Path, generate_data_source_file(Path(".")))
+    with data_sources_path.open() as f:
+        data_sources = json.load(f)
+    databricks = data_sources["databricks"]["options"]
+    for name, table in session.tables.items():
+        table.load_sql(
+            f"select * from visual_cube_builder_catalog.demo.{name}",
+            url=databricks["url"],
+            driver=databricks["driverClassName"],
+        )
 
 
 def define_measures(session: tt.Session, cube: tt.Cube):
@@ -58,32 +53,6 @@ def define_measures(session: tt.Session, cube: tt.Cube):
 
     sales_table = session.tables[SALES_TABLE_NAME]
     products_table = session.tables[PRODUCTS_TABLE_NAME]
-
-    m["Max price"] = tt.agg.max(sales_table["Unit price"])
-    m["Amount.SUM"] = tt.agg.sum(sales_table["Quantity"] * sales_table["Unit price"])
-    m["Amount.MEAN"] = tt.agg.mean(
-        sales_table["Quantity"] * sales_table["Unit price"],
-    )
-    cost = tt.agg.sum(
-        m["Quantity.SUM"] * tt.agg.single_value(products_table["Purchase price"]),
-        scope=tt.OriginScope(levels={l["Product"]}),
-    )
-    m["Margin"] = m["Amount.SUM"] - cost
-    m["Margin rate"] = m["Margin"] / m["Amount.SUM"]
-    m["Cumulative amount"] = tt.agg.sum(
-        m["Amount.SUM"], scope=tt.CumulativeScope(level=l["Date"])
-    )
-    m["Average amount per shop"] = tt.agg.mean(
-        m["Amount.SUM"], scope=tt.OriginScope(levels={l["Shop"]})
-    )
-
-    for measure in [
-        m["Amount.MEAN"],
-        m["Amount.SUM"],
-        m["Average amount per shop"],
-        m["Cumulative amount"],
-    ]:
-        measure.folder = "Amount"
 
 
 def main():
