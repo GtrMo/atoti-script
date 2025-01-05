@@ -9,6 +9,8 @@ readme = "README.md"
 python = "^3.11"
 atoti-server = "0.9.2.20241115165210+697980f"
 atoti-client = "0.9.2.20241115165210+697980f"
+atoti-server-jdbc = "0.9.2.20241115165210+697980f"
+atoti-client-jdbc = "0.9.2.20241115165210+697980f"
 atoti = "0.9.2.20241115165210+697980f"
 
 [tool.poetry.group.dev.dependencies]
