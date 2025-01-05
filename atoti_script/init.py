@@ -18,7 +18,7 @@ CUBE_NAME = "sales"
 SALES_TABLE_NAME = "sales"
 PRODUCTS_TABLE_NAME = "products"
 WAREHOUSES_TABLE_NAME = "warehouses"
-USERS_TABLE_NAME = "buyers"
+USERS_TABLE_NAME = "users"
 
 
 def start_application(session: tt.Session):
@@ -47,13 +47,13 @@ def load_data(session: tt.Session):
         url=databricks["url"],
         driver=databricks["driverClassName"],
     )
-    session.tables[PRODUCTS_TABLE_NAME].load_sql(
-        "select * from visual_cube_builder_catalog.demo.products",
+    session.tables[WAREHOUSES_TABLE_NAME].load_sql(
+        "select * from visual_cube_builder_catalog.demo.warehouses",
         url=databricks["url"],
         driver=databricks["driverClassName"],
     )
-    session.tables[WAREHOUSES_TABLE_NAME].load_sql(
-        "select * from visual_cube_builder_catalog.demo.warehouses",
+    session.tables[USERS_TABLE_NAME].load_sql(
+        "select * from visual_cube_builder_catalog.demo.users",
         url=databricks["url"],
         driver=databricks["driverClassName"],
     )
