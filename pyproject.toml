@@ -7,9 +7,7 @@ readme = "README.md"
 
 [tool.poetry.dependencies]
 python = "^3.11"
-atoti-server = "^0.9.1.20241008094536+667b80d"
-atoti-client = "^0.9.1.20241008094536+667b80d"
-atoti = "^0.9.1.20241008094536+667b80d"
+atoti = "0.9.1"
 
 [tool.poetry.group.dev.dependencies]
 ruff = "^0.4.2"
