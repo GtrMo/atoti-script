@@ -87,12 +87,14 @@ def define_measures(session: tt.Session, cube: tt.Cube):
 
 
 def main():
-    with tt.Session._connect("127.0.0.1") as session:
-        start_application(session)
+    from atoti_cloud_engine import get_atoti_session  # type: ignore
+
+    session = get_atoti_session()
+    start_application(session)
 
 
 def local_main():
-    with tt.Session() as session:
+    with tt.Session.start() as session:
         start_application(session)
 
 
