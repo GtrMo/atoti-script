@@ -7,10 +7,6 @@ readme = "README.md"
 requires-python = ">=3.11"
 dependencies = ["atoti==0.9.6"]
 
-[project.scripts]
-atoti = "atoti_script.init:main"
-local-atoti = "atoti_script.init:local_main"
-
 [tool.uv]
 dev-dependencies = ["ruff==0.11.10"]
 
