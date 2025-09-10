@@ -31,7 +31,7 @@ wheels = [
 
 [[package]]
 name = "atoti"
-version = "0.9.6"
+version = "0.9.8"
 source = { registry = "https://pypi.org/simple" }
 dependencies = [
     { name = "atoti-client" },
@@ -39,12 +39,12 @@ dependencies = [
     { name = "jdk4py" },
 ]
 wheels = [
-    { url = "https://files.pythonhosted.org/packages/70/8b/ca9f4aead3e22891aabfdef3db0290d90f4252191db7b8127b610ec4b687/atoti-0.9.6-py3-none-any.whl", hash = "sha256:0a3a9ccd3cb50d589193907cbb01d666ebbd83b50c3ea84b12bfb21ff22458ce", size = 1927, upload-time = "2025-05-17T03:38:05.657Z" },
+    { url = "https://files.pythonhosted.org/packages/2e/54/bbc40d3ab61bc51f226cd89635f3e8f6a8d61d322c1bd56d67e736806aa0/atoti-0.9.8-py3-none-any.whl", hash = "sha256:876d008d647d99b62cf360c9b6eda538ff6a6ba0645c44ceba8a5195a88843f1", size = 1945, upload-time = "2025-08-12T12:09:58.75Z" },
 ]
 
 [[package]]
 name = "atoti-client"
-version = "0.9.6"
+version = "0.9.8"
 source = { registry = "https://pypi.org/simple" }
 dependencies = [
     { name = "atoti-core" },
@@ -58,15 +58,15 @@ dependencies = [
     { name = "typing-extensions" },
 ]
 wheels = [
-    { url = "https://files.pythonhosted.org/packages/e8/3a/818b72c457ceac4b72ed1b5bddae1ea1bd7234b267a03027a5555c0cf221/atoti_client-0.9.6-py3-none-any.whl", hash = "sha256:41df4896d37bf761997ffa67378c263aa2eda8baca4ebb935c0bbf2441074991", size = 3195818, upload-time = "2025-05-17T03:38:07.071Z" },
+    { url = "https://files.pythonhosted.org/packages/12/90/f43fe807991f61cbfc4751c4d8dc02247d9924461ee65f35a3bba10b9753/atoti_client-0.9.8-py3-none-any.whl", hash = "sha256:f18e901ac2800a3725796283dbf39be8b4713825309beffbada18f3689dec78e", size = 3228233, upload-time = "2025-08-12T12:09:59.886Z" },
 ]
 
 [[package]]
 name = "atoti-core"
-version = "0.9.6"
+version = "0.9.8"
 source = { registry = "https://pypi.org/simple" }
 wheels = [
-    { url = "https://files.pythonhosted.org/packages/3c/ca/c1c97957ad692efa49e1bfdd46bf5f4362137c457d9e19eef7c5399543fe/atoti_core-0.9.6-py3-none-any.whl", hash = "sha256:a86847cf375b680baf7c6de2d40066a29c8d45067f53fd2499add2887ce1075b", size = 4135, upload-time = "2025-05-17T03:38:20.837Z" },
+    { url = "https://files.pythonhosted.org/packages/74/bc/085a1c107cddeb94cb7122f6da31dc2bd5bb94461a94606da735a0ffa124/atoti_core-0.9.8-py3-none-any.whl", hash = "sha256:4e6067dbd003d74a9f206948df10a2bef6653052f4fd88595669e99e74945cdf", size = 4135, upload-time = "2025-08-12T12:10:13.574Z" },
 ]
 
 [[package]]
@@ -83,20 +83,20 @@ dev = [
 ]
 
 [package.metadata]
-requires-dist = [{ name = "atoti", specifier = "==0.9.6" }]
+requires-dist = [{ name = "atoti", specifier = "==0.9.8" }]
 
 [package.metadata.requires-dev]
 dev = [{ name = "ruff", specifier = "==0.11.10" }]
 
 [[package]]
 name = "atoti-server"
-version = "0.9.6"
+version = "0.9.8"
 source = { registry = "https://pypi.org/simple" }
 dependencies = [
     { name = "atoti-core" },
 ]
 wheels = [
-    { url = "https://files.pythonhosted.org/packages/03/75/708a9b725232b89fa64ef76f69f31eedeeb7bec3b7394814b8580f28403d/atoti_server-0.9.6-py3-none-any.whl", hash = "sha256:cbcb54ba5a33654a7c1eb95c5a51f746f82a97037595ed57532bb949ec10f1e6", size = 148734128, upload-time = "2025-05-17T03:38:26.582Z" },
+    { url = "https://files.pythonhosted.org/packages/3b/1d/b9c07c38d5b3f77b7f701956f0bb75033db1278ad617a057c051555dc116/atoti_server-0.9.8-py3-none-any.whl", hash = "sha256:95270737ea23c1fea7acb2c771a15bc21c3d3542f4d47f4e4dcb679aa7bfd1ee", size = 151111369, upload-time = "2025-08-12T12:10:19.136Z" },
 ]
 
 [[package]]
@@ -319,7 +319,7 @@ wheels = [
 
 [[package]]
 name = "pydantic"
-version = "2.11.4"
+version = "2.11.7"
 source = { registry = "https://pypi.org/simple" }
 dependencies = [
     { name = "annotated-types" },
@@ -327,9 +327,9 @@ dependencies = [
     { name = "typing-extensions" },
     { name = "typing-inspection" },
 ]
-sdist = { url = "https://files.pythonhosted.org/packages/77/ab/5250d56ad03884ab5efd07f734203943c8a8ab40d551e208af81d0257bf2/pydantic-2.11.4.tar.gz", hash = "sha256:32738d19d63a226a52eed76645a98ee07c1f410ee41d93b4afbfa85ed8111c2d", size = 786540, upload-time = "2025-04-29T20:38:55.02Z" }
+sdist = { url = "https://files.pythonhosted.org/packages/00/dd/4325abf92c39ba8623b5af936ddb36ffcfe0beae70405d456ab1fb2f5b8c/pydantic-2.11.7.tar.gz", hash = "sha256:d989c3c6cb79469287b1569f7447a17848c998458d49ebe294e975b9baf0f0db", size = 788350, upload-time = "2025-06-14T08:33:17.137Z" }
 wheels = [
-    { url = "https://files.pythonhosted.org/packages/e7/12/46b65f3534d099349e38ef6ec98b1a5a81f42536d17e0ba382c28c67ba67/pydantic-2.11.4-py3-none-any.whl", hash = "sha256:d9615eaa9ac5a063471da949c8fc16376a84afb5024688b3ff885693506764eb", size = 443900, upload-time = "2025-04-29T20:38:52.724Z" },
+    { url = "https://files.pythonhosted.org/packages/6a/c0/ec2b1c8712ca690e5d61979dee872603e92b8a32f94cc1b72d53beab008a/pydantic-2.11.7-py3-none-any.whl", hash = "sha256:dde5df002701f6de26248661f6835bbe296a47bf73990135c7d07ce741b9623b", size = 444782, upload-time = "2025-06-14T08:33:14.905Z" },
 ]
 
 [[package]]
