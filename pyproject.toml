@@ -5,7 +5,7 @@ description = ""
 authors = [{ name = "Gautier Moin", email = "gmo@activeviam.com" }]
 readme = "README.md"
 requires-python = ">=3.11"
-dependencies = ["atoti==0.9.8"]
+dependencies = ["atoti==0.9.9"]
 
 [project.scripts]
 atoti = "atoti_script.init:main"

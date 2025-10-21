@@ -1,5 +1,5 @@
 version = 1
-revision = 2
+revision = 3
 requires-python = ">=3.11"
 resolution-markers = [
     "python_full_version >= '3.12'",
@@ -31,7 +31,7 @@ wheels = [
 
 [[package]]
 name = "atoti"
-version = "0.9.8"
+version = "0.9.9"
 source = { registry = "https://pypi.org/simple" }
 dependencies = [
     { name = "atoti-client" },
@@ -39,12 +39,12 @@ dependencies = [
     { name = "jdk4py" },
 ]
 wheels = [
-    { url = "https://files.pythonhosted.org/packages/2e/54/bbc40d3ab61bc51f226cd89635f3e8f6a8d61d322c1bd56d67e736806aa0/atoti-0.9.8-py3-none-any.whl", hash = "sha256:876d008d647d99b62cf360c9b6eda538ff6a6ba0645c44ceba8a5195a88843f1", size = 1945, upload-time = "2025-08-12T12:09:58.75Z" },
+    { url = "https://files.pythonhosted.org/packages/f9/6e/6d5f624b539ba38c70e96d150567a8350eb4bfe1b382113a9be73f955de9/atoti-0.9.9-py3-none-any.whl", hash = "sha256:8392b0c526cfe49554e517cdb9522fde00251497be762e8a2f008dd5ed1aa586", size = 1966, upload-time = "2025-09-22T20:05:50.372Z" },
 ]
 
 [[package]]
 name = "atoti-client"
-version = "0.9.8"
+version = "0.9.9"
 source = { registry = "https://pypi.org/simple" }
 dependencies = [
     { name = "atoti-core" },
@@ -58,15 +58,15 @@ dependencies = [
     { name = "typing-extensions" },
 ]
 wheels = [
-    { url = "https://files.pythonhosted.org/packages/12/90/f43fe807991f61cbfc4751c4d8dc02247d9924461ee65f35a3bba10b9753/atoti_client-0.9.8-py3-none-any.whl", hash = "sha256:f18e901ac2800a3725796283dbf39be8b4713825309beffbada18f3689dec78e", size = 3228233, upload-time = "2025-08-12T12:09:59.886Z" },
+    { url = "https://files.pythonhosted.org/packages/dd/7f/79fb79105c754be47203c5bab659a7cd2bae9a8c88319f7e82d96c5b35d0/atoti_client-0.9.9-py3-none-any.whl", hash = "sha256:b3ed1e1f491dcbcdae33d1ffc88d664c76541e887d6cb92a26c5d06ecd8e0a0f", size = 3239163, upload-time = "2025-09-22T20:05:51.459Z" },
 ]
 
 [[package]]
 name = "atoti-core"
-version = "0.9.8"
+version = "0.9.9"
 source = { registry = "https://pypi.org/simple" }
 wheels = [
-    { url = "https://files.pythonhosted.org/packages/74/bc/085a1c107cddeb94cb7122f6da31dc2bd5bb94461a94606da735a0ffa124/atoti_core-0.9.8-py3-none-any.whl", hash = "sha256:4e6067dbd003d74a9f206948df10a2bef6653052f4fd88595669e99e74945cdf", size = 4135, upload-time = "2025-08-12T12:10:13.574Z" },
+    { url = "https://files.pythonhosted.org/packages/27/21/a1e7263c3a0d21697cd53651b74795dc1a3fee25cd92912a93cc27999548/atoti_core-0.9.9-py3-none-any.whl", hash = "sha256:b3d5a854d994d60cfb3291dfa8473018d91d58f825afd41847c0f9ca7bbd4394", size = 4134, upload-time = "2025-09-22T20:06:06.574Z" },
 ]
 
 [[package]]
@@ -83,20 +83,20 @@ dev = [
 ]
 
 [package.metadata]
-requires-dist = [{ name = "atoti", specifier = "==0.9.8" }]
+requires-dist = [{ name = "atoti", specifier = "==0.9.9" }]
 
 [package.metadata.requires-dev]
 dev = [{ name = "ruff", specifier = "==0.11.10" }]
 
 [[package]]
 name = "atoti-server"
-version = "0.9.8"
+version = "0.9.9"
 source = { registry = "https://pypi.org/simple" }
 dependencies = [
     { name = "atoti-core" },
 ]
 wheels = [
-    { url = "https://files.pythonhosted.org/packages/3b/1d/b9c07c38d5b3f77b7f701956f0bb75033db1278ad617a057c051555dc116/atoti_server-0.9.8-py3-none-any.whl", hash = "sha256:95270737ea23c1fea7acb2c771a15bc21c3d3542f4d47f4e4dcb679aa7bfd1ee", size = 151111369, upload-time = "2025-08-12T12:10:19.136Z" },
+    { url = "https://files.pythonhosted.org/packages/b1/6c/93a49d01c7f0f8c1cf5c9cf7c5860f04324e50254f3282c54b4f4f6239fe/atoti_server-0.9.9-py3-none-any.whl", hash = "sha256:41f95eae3a5ca0cc2e1c5056c90f065fa70e3069893208313785975139ff69df", size = 151352704, upload-time = "2025-09-22T20:06:18.303Z" },
 ]
 
 [[package]]
