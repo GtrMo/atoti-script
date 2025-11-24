@@ -13,6 +13,8 @@ logging.basicConfig(
 )
 _LOGGER = logging.getLogger(__name__)
 
+CUBE_NAME = "Sales"
+
 SALES_TABLE_NAME = "sales"
 PRODUCTS_TABLE_NAME = "products"
 SHOPS_TABLE_NAME = "shops"
@@ -47,7 +49,7 @@ def create_cube(session: tt.Session, data_path: Path):
     )
     sales_table.join(shops_table, sales_table["Shop"] == shops_table["Shop ID"])
 
-    return session.create_cube(sales_table)
+    return session.create_cube(sales_table, name=CUBE_NAME)
 
 
 def define_measures(session: tt.Session, cube: tt.Cube):
@@ -64,7 +66,7 @@ def define_measures(session: tt.Session, cube: tt.Cube):
     )
     cost = tt.agg.sum(
         m["Quantity.SUM"] * tt.agg.single_value(products_table["Purchase price"]),
-        scope=tt.OriginScope(l["Product"]),
+        scope=tt.OriginScope(levels={l["Product"]}),
     )
     m["Margin"] = m["Amount.SUM"] - cost
     m["Margin rate"] = m["Margin"] / m["Amount.SUM"]
@@ -72,7 +74,7 @@ def define_measures(session: tt.Session, cube: tt.Cube):
         m["Amount.SUM"], scope=tt.CumulativeScope(level=l["Date"])
     )
     m["Average amount per shop"] = tt.agg.mean(
-        m["Amount.SUM"], scope=tt.OriginScope(l["Shop"])
+        m["Amount.SUM"], scope=tt.OriginScope(levels={l["Shop"]})
     )
 
     for measure in [
@@ -85,7 +87,14 @@ def define_measures(session: tt.Session, cube: tt.Cube):
 
 
 def main():
-    with tt.Session._connect("127.0.0.1") as session:
+    from atoti_cloud_engine import get_atoti_session  # type: ignore
+
+    session = get_atoti_session()
+    start_application(session)
+
+
+def local_main():
+    with tt.Session.start() as session:
         start_application(session)
 
 

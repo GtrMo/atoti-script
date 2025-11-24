@@ -1,18 +1,19 @@
-[tool.poetry]
+[project]
 name = "atoti-script"
 version = "0.1.0"
 description = ""
-authors = ["Gautier Moin <gmo@activeviam.com>"]
+authors = [{ name = "Gautier Moin", email = "gmo@activeviam.com" }]
 readme = "README.md"
+requires-python = ">=3.11"
+dependencies = ["atoti==0.9.10"]
 
-[tool.poetry.dependencies]
-python = "^3.11"
-atoti = "^0.8.6"
+[project.scripts]
+atoti = "atoti_script.init:main"
+local-atoti = "atoti_script.init:local_main"
 
-
-[tool.poetry.group.dev.dependencies]
-ruff = "^0.1.7"
+[tool.uv]
+dev-dependencies = ["ruff==0.11.10"]
 
 [build-system]
-requires = ["poetry-core"]
-build-backend = "poetry.core.masonry.api"
+requires = ["uv_build>=0.7.0,<0.8.0"]
+build-backend = "uv_build"
