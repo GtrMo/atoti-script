@@ -1,7 +1,7 @@
 import unittest
 
 import atoti as tt
-from atoti_script.init import start_application, CUBE_NAME, main
+from atoti_script.init import start_application, CUBE_NAME
 
 
 class TestScript(unittest.TestCase):

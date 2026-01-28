@@ -21,6 +21,8 @@ SHOPS_TABLE_NAME = "shops"
 
 
 def start_application(session: tt.Session):
+    _LOGGER.info("Setting up users")
+    setup_users(session)
     _LOGGER.info("Starting init script")
     tutorial_path = Path() / "tutorial"
     if tutorial_path.exists():
@@ -84,6 +86,10 @@ def define_measures(session: tt.Session, cube: tt.Cube):
         m["Cumulative amount"],
     ]:
         measure.folder = "Amount"
+
+
+def setup_users(session: tt.Session):
+    session.security.basic_authentication.credentials["admin"] = "admin"
 
 
 def main():
