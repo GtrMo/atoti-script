@@ -90,6 +90,7 @@ def define_measures(session: tt.Session, cube: tt.Cube):
 
 def setup_users(session: tt.Session):
     session.security.basic_authentication.credentials["admin"] = "admin"
+    session.security.individual_roles["admin"] = {"ROLE_USER", "ROLE_ADMIN"}
 
 
 def main():
@@ -100,8 +101,16 @@ def main():
 
 
 def local_main():
-    with tt.Session.start() as session:
+    with tt.Session.start(
+        tt.SessionConfig(
+            security=tt.SecurityConfig(
+                basic_authentication=tt.BasicAuthenticationConfig()
+            ),
+            port=8080,
+        )
+    ) as session:
         start_application(session)
+        session.wait()
 
 
 if __name__ == "__main__":
