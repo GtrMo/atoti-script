@@ -31,7 +31,7 @@ wheels = [
 
 [[package]]
 name = "atoti"
-version = "0.9.14"
+version = "0.9.15"
 source = { registry = "https://pypi.org/simple" }
 dependencies = [
     { name = "atoti-client" },
@@ -41,12 +41,12 @@ dependencies = [
     { name = "jdk4py" },
 ]
 wheels = [
-    { url = "https://files.pythonhosted.org/packages/59/56/b90506d09b598bb5c7c09f5ce7065fc78e0e28c8b0a1f958db6bdf09d879/atoti-0.9.14-py3-none-any.whl", hash = "sha256:3eb75c1e2b533f591a89b835fb4b38f7a605b039b784144431e5a19dda34fed5", size = 2323, upload-time = "2026-04-17T21:27:34.708Z" },
+    { url = "https://files.pythonhosted.org/packages/25/c7/16bcb64a63aaa612af98a6b550677d44b1bdbbcfdf699b04f35486b2b9e2/atoti-0.9.15-py3-none-any.whl", hash = "sha256:f73885997261054d67ca6fc45f9074dd7c084971731a0b27017769511e4d2c03", size = 2321, upload-time = "2026-05-29T20:45:36.992Z" },
 ]
 
 [[package]]
 name = "atoti-client"
-version = "0.9.14"
+version = "0.9.15"
 source = { registry = "https://pypi.org/simple" }
 dependencies = [
     { name = "atoti-core" },
@@ -61,12 +61,12 @@ dependencies = [
     { name = "typing-extensions" },
 ]
 wheels = [
-    { url = "https://files.pythonhosted.org/packages/1f/18/203bb444c0abfc23b62ccf88f96cdd6967ddf030431aed4c176912d44e78/atoti_client-0.9.14-py3-none-any.whl", hash = "sha256:c6b202049d3eb03ef28656a9811fa8202aa0a6ff6a1e44f5f4d8d67bbcb2773b", size = 4590426, upload-time = "2026-04-17T21:27:36.221Z" },
+    { url = "https://files.pythonhosted.org/packages/40/c1/52cd73daa9e243317f792dd72fd8d800d5aa1c80104b17a3f023ccad00c4/atoti_client-0.9.15-py3-none-any.whl", hash = "sha256:c0b709bff03790fc63cfb1427f6f5cc80c5d3df2a3f6b4006a1be9f24ee76710", size = 10517563, upload-time = "2026-05-29T20:45:38.266Z" },
 ]
 
 [[package]]
 name = "atoti-client-parquet"
-version = "0.9.14"
+version = "0.9.15"
 source = { registry = "https://pypi.org/simple" }
 dependencies = [
     { name = "atoti-client" },
@@ -74,15 +74,15 @@ dependencies = [
     { name = "typing-extensions" },
 ]
 wheels = [
-    { url = "https://files.pythonhosted.org/packages/e9/8f/9e6bc255af71394d0712cb5c759975fec07a797e0e7a44702acf305988e3/atoti_client_parquet-0.9.14-py3-none-any.whl", hash = "sha256:70f266eb0a9f405c3df0a1293ccc50ee17b65ace7a160f354f9e558220eade83", size = 2903, upload-time = "2026-04-17T21:27:52.581Z" },
+    { url = "https://files.pythonhosted.org/packages/0e/ed/450fb5c3cc50bd88ffd09a0452c474e8f8e88e533abaa4dcedb7cf979554/atoti_client_parquet-0.9.15-py3-none-any.whl", hash = "sha256:87c04e576678997a20e4d6ce4f4512022aac0a48909ccb14aaa4a7d9cdf1abc8", size = 2901, upload-time = "2026-05-29T20:45:52.587Z" },
 ]
 
 [[package]]
 name = "atoti-core"
-version = "0.9.14"
+version = "0.9.15"
 source = { registry = "https://pypi.org/simple" }
 wheels = [
-    { url = "https://files.pythonhosted.org/packages/6d/a5/12771a6e8e257d481af3a28a620b2316f0426d468184ac09629ed359625a/atoti_core-0.9.14-py3-none-any.whl", hash = "sha256:11becde83ea2751c15067a330c90d2893816d3268ea17a42d0234eccb968b418", size = 5609, upload-time = "2026-04-17T21:27:56.301Z" },
+    { url = "https://files.pythonhosted.org/packages/fd/2b/619e6ad6f8de535d4c72c30a0f9c2aff0e0489bd8abb1ea8246328d69bb5/atoti_core-0.9.15-py3-none-any.whl", hash = "sha256:b2e858924f4789cf3a7dafe7824b0701b38523504cff90a249543a1760eb3b43", size = 5997, upload-time = "2026-05-29T20:45:55.712Z" },
 ]
 
 [[package]]
@@ -99,32 +99,32 @@ dev = [
 ]
 
 [package.metadata]
-requires-dist = [{ name = "atoti", specifier = "==0.9.14" }]
+requires-dist = [{ name = "atoti", specifier = "==0.9.15" }]
 
 [package.metadata.requires-dev]
 dev = [{ name = "ruff", specifier = "==0.11.10" }]
 
 [[package]]
 name = "atoti-server"
-version = "0.9.14"
+version = "0.9.15"
 source = { registry = "https://pypi.org/simple" }
 dependencies = [
     { name = "atoti-core" },
 ]
 wheels = [
-    { url = "https://files.pythonhosted.org/packages/8a/ea/d671f5fb004a725f41dc97f8cb3eb27afa083099a1ee3305e77bf55a9c7d/atoti_server-0.9.14-py3-none-any.whl", hash = "sha256:353a0406ddff88368125a791e567df9b6fdd5ed2308a785c0db0f328dd09d0e9", size = 128454770, upload-time = "2026-04-17T21:28:01.569Z" },
+    { url = "https://files.pythonhosted.org/packages/f4/9b/3921af6e2c1fb3606aba5b57c14b3550ed7323f71e55998939476ac8f713/atoti_server-0.9.15-py3-none-any.whl", hash = "sha256:0e81fb585111997b0993ba9b0448e5f0e1ebd4ec69d09800d35f11128ed0b180", size = 140606480, upload-time = "2026-05-29T20:46:01.138Z" },
 ]
 
 [[package]]
 name = "atoti-server-parquet"
-version = "0.9.14"
+version = "0.9.15"
 source = { registry = "https://pypi.org/simple" }
 dependencies = [
     { name = "atoti-core" },
     { name = "typing-extensions" },
 ]
 wheels = [
-    { url = "https://files.pythonhosted.org/packages/b7/26/4e5f9438f8359c436efb74cc0f04993243bf3dc201f29cdd1b639cbd24e0/atoti_server_parquet-0.9.14-py3-none-any.whl", hash = "sha256:ab596829e26fb38b64b5d381153ed2d7f6b377df37e35a9b3b56577962b020b0", size = 50724715, upload-time = "2026-04-17T21:28:40.82Z" },
+    { url = "https://files.pythonhosted.org/packages/f6/0e/1d1e4bfa02f6edf63f81a58bcf1e303d4474b83f4e751fa8bf12737e2ea4/atoti_server_parquet-0.9.15-py3-none-any.whl", hash = "sha256:784a73d6623d7f479794556e2400753dad801fbe2c223855b7d771c651fa00e9", size = 51071002, upload-time = "2026-05-29T20:46:44.347Z" },
 ]
 
 [[package]]

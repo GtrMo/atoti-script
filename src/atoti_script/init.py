@@ -4,7 +4,6 @@ from shutil import rmtree
 import sys
 
 import atoti as tt
-from atoti.copy_tutorial import _copy_tutorial
 
 logging.basicConfig(
     level=logging.INFO,
@@ -22,12 +21,8 @@ SHOPS_TABLE_NAME = "shops"
 
 def start_application(session: tt.Session):
     _LOGGER.info("Starting init script")
-    tutorial_path = Path() / "tutorial"
-    if tutorial_path.exists():
-        rmtree(tutorial_path)
 
-    _copy_tutorial(tutorial_path)
-    cube = create_cube(session, tutorial_path / "data")
+    cube = create_cube(session, Path() / "data")
     define_measures(session, cube)
 
 
