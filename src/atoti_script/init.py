@@ -22,7 +22,7 @@ SHOPS_TABLE_NAME = "shops"
 def start_application(session: tt.Session):
     _LOGGER.info("Starting init script")
 
-    cube = create_cube(session, Path() / "data")
+    cube = create_cube(session, Path(__file__).parent.parent.parent / "data")
     define_measures(session, cube)
 
 
