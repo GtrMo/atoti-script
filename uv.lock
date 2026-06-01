@@ -31,26 +31,29 @@ wheels = [
 
 [[package]]
 name = "atoti"
-version = "0.9.10"
+version = "0.9.14"
 source = { registry = "https://pypi.org/simple" }
 dependencies = [
     { name = "atoti-client" },
+    { name = "atoti-client-parquet" },
     { name = "atoti-server" },
+    { name = "atoti-server-parquet" },
     { name = "jdk4py" },
 ]
 wheels = [
-    { url = "https://files.pythonhosted.org/packages/54/c3/b6e667d6a4e84d0d07d2fc6b99ddda8cd4201666027d78b1622cf1050d3d/atoti-0.9.10-py3-none-any.whl", hash = "sha256:ee47aca12a190f6334b65ec281f9ebec883ad378195bf7b5d1c8357ae8e333d4", size = 2190, upload-time = "2025-10-31T23:01:54.048Z" },
+    { url = "https://files.pythonhosted.org/packages/59/56/b90506d09b598bb5c7c09f5ce7065fc78e0e28c8b0a1f958db6bdf09d879/atoti-0.9.14-py3-none-any.whl", hash = "sha256:3eb75c1e2b533f591a89b835fb4b38f7a605b039b784144431e5a19dda34fed5", size = 2323, upload-time = "2026-04-17T21:27:34.708Z" },
 ]
 
 [[package]]
 name = "atoti-client"
-version = "0.9.10"
+version = "0.9.14"
 source = { registry = "https://pypi.org/simple" }
 dependencies = [
     { name = "atoti-core" },
     { name = "graphql-core" },
     { name = "httpx" },
     { name = "numpy" },
+    { name = "opentelemetry-api" },
     { name = "pandas" },
     { name = "py4j" },
     { name = "pyarrow" },
@@ -58,15 +61,28 @@ dependencies = [
     { name = "typing-extensions" },
 ]
 wheels = [
-    { url = "https://files.pythonhosted.org/packages/b3/06/96c1d5679d25fd4eba91fbb33a9e16c609dc0779737ee97fa4be232861ef/atoti_client-0.9.10-py3-none-any.whl", hash = "sha256:e91027daae4157233c7b63b9a75865b34378f80aac35a5a9dfde0de47df9cc9a", size = 3285733, upload-time = "2025-10-31T23:01:55.299Z" },
+    { url = "https://files.pythonhosted.org/packages/1f/18/203bb444c0abfc23b62ccf88f96cdd6967ddf030431aed4c176912d44e78/atoti_client-0.9.14-py3-none-any.whl", hash = "sha256:c6b202049d3eb03ef28656a9811fa8202aa0a6ff6a1e44f5f4d8d67bbcb2773b", size = 4590426, upload-time = "2026-04-17T21:27:36.221Z" },
+]
+
+[[package]]
+name = "atoti-client-parquet"
+version = "0.9.14"
+source = { registry = "https://pypi.org/simple" }
+dependencies = [
+    { name = "atoti-client" },
+    { name = "pydantic" },
+    { name = "typing-extensions" },
+]
+wheels = [
+    { url = "https://files.pythonhosted.org/packages/e9/8f/9e6bc255af71394d0712cb5c759975fec07a797e0e7a44702acf305988e3/atoti_client_parquet-0.9.14-py3-none-any.whl", hash = "sha256:70f266eb0a9f405c3df0a1293ccc50ee17b65ace7a160f354f9e558220eade83", size = 2903, upload-time = "2026-04-17T21:27:52.581Z" },
 ]
 
 [[package]]
 name = "atoti-core"
-version = "0.9.10"
+version = "0.9.14"
 source = { registry = "https://pypi.org/simple" }
 wheels = [
-    { url = "https://files.pythonhosted.org/packages/58/1a/00ff51a2c81eaa7735ffce95e234056c77d34a91945608cd9c3610f09b52/atoti_core-0.9.10-py3-none-any.whl", hash = "sha256:32439508bb17f6faa6ea58382a9c073a1540839dc720763b3ce2ec191d5a5a9c", size = 4381, upload-time = "2025-10-31T23:02:08.157Z" },
+    { url = "https://files.pythonhosted.org/packages/6d/a5/12771a6e8e257d481af3a28a620b2316f0426d468184ac09629ed359625a/atoti_core-0.9.14-py3-none-any.whl", hash = "sha256:11becde83ea2751c15067a330c90d2893816d3268ea17a42d0234eccb968b418", size = 5609, upload-time = "2026-04-17T21:27:56.301Z" },
 ]
 
 [[package]]
@@ -83,20 +99,32 @@ dev = [
 ]
 
 [package.metadata]
-requires-dist = [{ name = "atoti", specifier = "==0.9.10" }]
+requires-dist = [{ name = "atoti", specifier = "==0.9.14" }]
 
 [package.metadata.requires-dev]
 dev = [{ name = "ruff", specifier = "==0.11.10" }]
 
 [[package]]
 name = "atoti-server"
-version = "0.9.10"
+version = "0.9.14"
 source = { registry = "https://pypi.org/simple" }
 dependencies = [
     { name = "atoti-core" },
 ]
 wheels = [
-    { url = "https://files.pythonhosted.org/packages/77/e2/5a017d52903b20d2e4f108e5ab19776429bc6498873e4eb002767c4e2ae3/atoti_server-0.9.10-py3-none-any.whl", hash = "sha256:648be278c6ca83c98a99c6d2e96c376491f44a4ae511f99abfd897ae0632b495", size = 150975942, upload-time = "2025-10-31T23:02:15.394Z" },
+    { url = "https://files.pythonhosted.org/packages/8a/ea/d671f5fb004a725f41dc97f8cb3eb27afa083099a1ee3305e77bf55a9c7d/atoti_server-0.9.14-py3-none-any.whl", hash = "sha256:353a0406ddff88368125a791e567df9b6fdd5ed2308a785c0db0f328dd09d0e9", size = 128454770, upload-time = "2026-04-17T21:28:01.569Z" },
+]
+
+[[package]]
+name = "atoti-server-parquet"
+version = "0.9.14"
+source = { registry = "https://pypi.org/simple" }
+dependencies = [
+    { name = "atoti-core" },
+    { name = "typing-extensions" },
+]
+wheels = [
+    { url = "https://files.pythonhosted.org/packages/b7/26/4e5f9438f8359c436efb74cc0f04993243bf3dc201f29cdd1b639cbd24e0/atoti_server_parquet-0.9.14-py3-none-any.whl", hash = "sha256:ab596829e26fb38b64b5d381153ed2d7f6b377df37e35a9b3b56577962b020b0", size = 50724715, upload-time = "2026-04-17T21:28:40.82Z" },
 ]
 
 [[package]]
@@ -165,14 +193,14 @@ wheels = [
 
 [[package]]
 name = "jdk4py"
-version = "21.0.8.0"
+version = "21.0.8.2"
 source = { registry = "https://pypi.org/simple" }
 wheels = [
-    { url = "https://files.pythonhosted.org/packages/e2/9e/1923f4d1c831af7319dd9357c3b6d3edf62c57f03770f344d54c7daa054f/jdk4py-21.0.8.0-py3-none-macosx_10_9_x86_64.whl", hash = "sha256:44306d0cc69ec19809b8d8978884510a17cadd37bb5d073702b28ec724877245", size = 30727210, upload-time = "2025-10-14T19:15:43.913Z" },
-    { url = "https://files.pythonhosted.org/packages/71/65/520a1eed5793fb548c1fabd4537b30a6485a1cbf63b50c30aab1e2781fcd/jdk4py-21.0.8.0-py3-none-macosx_11_0_arm64.whl", hash = "sha256:3e7d3dfe0e67e895911b888dd21005502907d5a1335b0fb8b58f013186744ea9", size = 29534051, upload-time = "2025-10-14T19:15:47.979Z" },
-    { url = "https://files.pythonhosted.org/packages/d0/1e/f30581ddb82bc4aba51ab1bf16d12caea25527ebb1aefe95006feb1b5d02/jdk4py-21.0.8.0-py3-none-manylinux_2_17_aarch64.whl", hash = "sha256:7f92806d87536a02f26c1e6a0fe66b7660f5e736b36b2eef473ea1db61938f79", size = 33021446, upload-time = "2025-10-14T19:15:52.133Z" },
-    { url = "https://files.pythonhosted.org/packages/7a/b8/6225b92a136482942e9c0e76964fb6362226a220dcd0745ea272b4b1b05c/jdk4py-21.0.8.0-py3-none-manylinux_2_17_x86_64.whl", hash = "sha256:28035f9f2dd99a2ffcecfc61f55849b32b906945217d1900fa8f100d264802c7", size = 33617454, upload-time = "2025-10-14T19:15:56.376Z" },
-    { url = "https://files.pythonhosted.org/packages/97/a2/aac69b73889e99ac89b25a96d3dec9aeb765c0b1b8904d82339cf9d2b7c3/jdk4py-21.0.8.0-py3-none-win_amd64.whl", hash = "sha256:d150b1812e71c3ad9ae79daf6d6a62edd78dcbaac94dad85d8d0b01654611bae", size = 30166051, upload-time = "2025-10-14T19:16:00.226Z" },
+    { url = "https://files.pythonhosted.org/packages/9b/91/faab5f5b2bdcaf74c20304c5c3a6a9e304a6c609a1d755e927c07a87f883/jdk4py-21.0.8.2-py3-none-macosx_10_9_x86_64.whl", hash = "sha256:7b2b397f2999e5a71728691477857a5a41215b3c95f6e8b15a4d53bc76203dff", size = 30900008, upload-time = "2026-04-10T20:50:45.913Z" },
+    { url = "https://files.pythonhosted.org/packages/e6/19/449f69b8706c2cb5fa46fdc3e75650983e44e4e025d6ade78580b2c8572d/jdk4py-21.0.8.2-py3-none-macosx_11_0_arm64.whl", hash = "sha256:0667b81b3ddc60157f773e0d05d00f4d46530f82bdc59e295b322b8d33f69417", size = 29692099, upload-time = "2026-04-10T20:50:37.405Z" },
+    { url = "https://files.pythonhosted.org/packages/9d/0c/24a7d8e4c96c3843b8163ba7a9be939b48fc181fb3263bd4fd9289ed8f41/jdk4py-21.0.8.2-py3-none-manylinux_2_17_aarch64.whl", hash = "sha256:2519dce230b3ed13a93a3efed15c6b8b163aeacd77859ddf59eef3faa69c635d", size = 33195566, upload-time = "2026-04-10T20:50:34.609Z" },
+    { url = "https://files.pythonhosted.org/packages/a2/61/f3b5936908ff6de66c61aef69bf1074cb468fb883f5a0bb9e15e67a6b484/jdk4py-21.0.8.2-py3-none-manylinux_2_17_x86_64.whl", hash = "sha256:85addfcb57c7051dad6145b9f816fc519337e9a0c705ef01edc9dc7818ee0356", size = 33794570, upload-time = "2026-04-10T20:50:40.113Z" },
+    { url = "https://files.pythonhosted.org/packages/11/e3/87b83011678930770bf59b3f3fa5bd6c85f5e48941f1ef9e31cbfb62bee3/jdk4py-21.0.8.2-py3-none-win_amd64.whl", hash = "sha256:1c8e37d26315dfbb603503153d3dcdd90021fda71d64ab0b6309f06f83c0d503", size = 30329010, upload-time = "2026-04-10T20:50:42.783Z" },
 ]
 
 [[package]]
@@ -221,6 +249,18 @@ wheels = [
     { url = "https://files.pythonhosted.org/packages/76/95/bef5b37f29fc5e739947e9ce5179ad402875633308504a52d188302319c8/numpy-2.2.6-cp313-cp313t-musllinux_1_2_x86_64.whl", hash = "sha256:8e9ace4a37db23421249ed236fdcdd457d671e25146786dfc96835cd951aa7c1", size = 18385260, upload-time = "2025-05-17T21:43:05.189Z" },
     { url = "https://files.pythonhosted.org/packages/09/04/f2f83279d287407cf36a7a8053a5abe7be3622a4363337338f2585e4afda/numpy-2.2.6-cp313-cp313t-win32.whl", hash = "sha256:038613e9fb8c72b0a41f025a7e4c3f0b7a1b5d768ece4796b674c8f3fe13efff", size = 6377225, upload-time = "2025-05-17T21:43:16.254Z" },
     { url = "https://files.pythonhosted.org/packages/67/0e/35082d13c09c02c011cf21570543d202ad929d961c02a147493cb0c2bdf5/numpy-2.2.6-cp313-cp313t-win_amd64.whl", hash = "sha256:6031dd6dfecc0cf9f668681a37648373bddd6421fff6c66ec1624eed0180ee06", size = 12771374, upload-time = "2025-05-17T21:43:35.479Z" },
+]
+
+[[package]]
+name = "opentelemetry-api"
+version = "1.42.1"
+source = { registry = "https://pypi.org/simple" }
+dependencies = [
+    { name = "typing-extensions" },
+]
+sdist = { url = "https://files.pythonhosted.org/packages/b4/1c/125e1c936c0873796771b7f04f6c93b9f1bf5d424cea90fda94a99f61da8/opentelemetry_api-1.42.1.tar.gz", hash = "sha256:56c63bea9f77b62856be8c47600474acad853b2924b99b1687c4cb6297166716", size = 72296, upload-time = "2026-05-21T16:32:49.335Z" }
+wheels = [
+    { url = "https://files.pythonhosted.org/packages/a3/ca/9520cc1f3dfbbd03ac5903bbf55833e257bc64b1cf30fa8b0d6df374d821/opentelemetry_api-1.42.1-py3-none-any.whl", hash = "sha256:51a69edacadbc03a8950ace1c4c21099cacc538820ac2c9e36277e78cebba714", size = 61311, upload-time = "2026-05-21T16:32:28.822Z" },
 ]
 
 [[package]]
